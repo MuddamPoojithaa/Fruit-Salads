@@ -1,0 +1,335 @@
+
+/* General Styles */
+.services {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+  }
+  
+  .services h2 {
+    font-size: 30px;
+    color: #666;
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: -5px;
+    font-weight: 600;
+  }
+  
+  .services h3 {
+    font-size: 32px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    margin-bottom: 30px;
+  }
+  
+  .service-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  
+  /* Service Box Styles */
+  .service-box {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    max-width: 300px;
+    flex: 1;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+  }
+  
+  .service-box:hover {
+    transform: translateY(-10px); /* Slight upward motion */
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1); /* Add shadow on hover */
+  }
+  
+  .service-box i {
+    font-size: 40px;
+    color:black;
+    margin-bottom: 15px;
+    display: inline-block;
+    transition: color 0.3s ease; /* Smooth color change on hover */
+  }
+  
+  .service-box:hover i {
+    color: #b29257; /* Change icon color on hover */
+  }
+  
+  .service-box h4 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .service-box p {
+    font-size: 14px;
+    color: #555;
+  }
+  /* Initially hide service boxes */
+.hidden {
+    opacity: 1;
+    transform: translateY(20px);
+  }
+  
+  /* Fade-in animation when triggered */
+  .service-box.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .service-container {
+      flex-direction: column; /* Stack boxes vertically on smaller screens */
+    }
+  
+    .service-box {
+      max-width: 100%; /* Full width for smaller screens */
+      margin-bottom: 20px; /* Add space between boxes */
+    }
+  }
+  
+  /* Animation */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .service-box {
+    animation: fadeInUp 0.8s ease; /* Fade-in animation */
+  }
+  
+
+
+
+
+  /* Testimonials Section */
+.testimonials-section {
+  background: #f9f9f9;
+  padding: 60px 20px;
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+}
+
+.testimonials-section h2 {
+  font-size: 2.5rem;
+  color: #d77f48;
+  margin-bottom: 40px;
+  font-weight: 600;
+}
+
+.testimonial-carousel {
+  display: flex;
+  overflow: hidden;
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.testimonial {
+  min-width: 100%;
+  transition: transform 0.5s ease;
+  padding: 30px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  background: #ffffff;
+}
+
+.testimonial-text {
+  font-size: 1.2rem;
+  color: #5a3d2b;
+  margin-bottom: 15px;
+  font-style: italic;
+}
+
+.author {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.author img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #d77f48; /* Soft orange border */
+}
+
+.author h4 {
+  font-size: 1.2rem;
+  color: #5a3d2b;
+  margin: 0;
+}
+
+.author span {
+  font-size: 0.9rem;
+  color: #8c6a58;
+}
+
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+.testi-clients{
+	width: 100%;
+	min-height: 70vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.testimonials{
+	position: relative;
+	width: 100%;
+	min-height: 450px;
+}
+.testimonials .contents-wraper{
+	width: 70%;
+	min-height: inherit;
+	margin: 30px auto;
+	text-align: center;
+}
+.contents-wraper .header h1{
+	position: relative;
+	font-size: 30px;
+	
+  
+	font-weight: 500;
+	text-align: center;
+  font-family: 'Poppins', sans-serif;
+	letter-spacing: 1px;
+	color: black;
+	font-weight: bolder;
+}
+
+
+.contents-wraper .testRow{
+	width: 100%;
+	min-height: inherit;
+	position: relative;
+	overflow: hidden;
+}
+.testRow .testItem{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+.testRow .testItem:not(.active){
+	top: 0;
+	left: -100%;
+}
+.testRow .testItem img{
+	width: 120px;
+	height: 120px;
+	border-radius: 50%;
+	object-fit: cover;
+	margin-bottom: 5px;
+	outline: 2px solid rgb(55, 184, 64);
+	outline-offset: 2px;
+}
+.testRow .testItem h3{
+	font-size: 20px;
+  font-family: 'Poppins', sans-serif;
+	padding: 7px;
+	color: black;
+}
+.testRow .testItem h4{
+  font-family: 'Poppins', sans-serif;
+	color: rgb(55, 184, 64);
+  font-size: 20px;
+}
+.testRow .testItem p{
+	font-size: 16px;
+  font-family: serif;
+
+	letter-spacing: 1px;
+	line-height: 1.2;
+	padding: 30px;
+	color: black;
+}
+.contents-wraper .indicators{
+	position: absolute;
+	bottom: 30px;
+	left: 50%;
+	transform: translateX(-50%);
+	padding: 5px;
+	cursor: pointer;
+}
+.contents-wraper .indicators .dot{
+	width: 15px;
+	height: 15px;
+	margin: 0px 3px;
+	border: 3px solid #aaa;
+	border-radius: 50%;
+	display: inline-block;
+	transition: background-color 0.5s ease;
+}
+.contents-wraper .indicators .active{
+	background-color: rgb(55, 184, 64);
+}
+@keyframes next1{
+	from{
+		left: 0%;
+	}
+	to{
+		left: -100%;
+	}
+}
+@keyframes next2{
+	from{
+		left: 100%;
+	}
+	to{
+		left: 0%;
+	}
+}
+
+@keyframes prev1{
+	from{
+		left: 0%;
+	}
+	to{
+		left: 100%;
+	}
+}
+@keyframes prev2{
+	from{
+		left: -100%;
+	}
+	to{
+		left: 0%;
+	}
+}
+
+@media(max-width: 550px){
+	.testimonials .contents-wraper{
+		width: 90%;
+	}
+	.contents-wraper .header h1{
+		font-size: 32px;
+	}
+	.testRow .testItem h3{
+		font-size: 26px;
+	}
+	.testRow .testItem p{
+		font-size: 16px;
+		letter-spacing: initial;
+		line-height: initial;
+	}
+
+}
+

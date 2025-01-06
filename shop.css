@@ -1,0 +1,207 @@
+/* General Section Styling */
+.product-section {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 20px;
+    animation: fadeIn 1s ease-in;
+  }
+  
+  /* Categories */
+  .categories {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    animation: slideDown 1s ease-in-out;
+  }
+  
+  .categories a {
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+    padding-bottom: 5px;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.3s, color 0.3s;
+    cursor: pointer;
+  }
+  
+  .categories a:hover,
+  .categories a.active {
+    border-color:  #7ab831;
+    color:  black;
+  }
+  
+  /* Products */
+  .products {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    animation: fadeInUp 0.8s ease-in-out;
+  }
+  
+  .product-card {
+    height: 510px;
+    width: 350px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: block;
+    opacity: 1;
+    
+    transform: translateY(100px);
+    transition: transform 0.3s, box-shadow 0.3s, opacity 0.3s;
+    animation: slideUp 0.5s ease forwards;
+  }
+  
+  .product-card img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    transform: translateY(100px); /* Start below the container */
+  
+    
+    transform: translateY(10px) scale(0.9) rotate(0deg);
+    transition: transform 0.5s ease, filter 0.5s ease;
+  }
+  
+  .product-card img:hover {
+    filter: brightness(1.1) contrast(1.2) saturate(1.2);
+    transform: translateY(0) scale(1.05) rotate(0deg);
+  }
+  
+  .product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Keyframes for Animations */
+  @keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+  }
+  
+  @keyframes slideDown {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+  }
+  
+  @keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+  }
+  
+  @keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px) scale(0.9) rotate(-2deg);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1) rotate(0);
+    }
+  }
+  
+  /* Cart Icon Styling */
+  .cart-icon {
+    position: absolute;
+    bottom: 43px;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    opacity: 1;
+    transform: translateY(100%);
+    transition: transform 0.3s ease, opacity 0.3s ease, background-color 0.3s;
+    font-size: 16px;
+    cursor: pointer;
+    z-index: 10;
+  }
+  
+  .product-img-container:hover .cart-icon {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* Image Hover Effect */
+  .product-img-container img {
+    transition: transform 0.4s ease-in-out, filter 0.4s ease-in-out;
+    will-change: transform, filter;
+  }
+  
+  .product-img-container:hover img {
+    transform: scale(1.1) rotate(2deg);
+    filter: brightness(1.2) saturate(1.1);
+  }
+  
+  /* Price Styling */
+  .price {
+    margin-top: 6px;
+    font-size: 1.2rem;
+    color: black;
+    font-weight: bold;
+    text-align: center;
+    display: block;
+    background-color: #b58540;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .price:hover {
+    background-color: #65522d8a;
+    transform: scale(1.05);
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 1024px) {
+    .product-card {
+        width: 45%;
+        animation: fadeInUp 0.8s ease-in-out;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .product-card {
+        width: 100%;
+    }
+  
+    .categories {
+        gap: 10px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .categories {
+        flex-direction: column;
+        gap: 5px;
+    }
+  
+    .categories a {
+        font-size: 14px;
+    }
+  
+    .price {
+        font-size: 1rem;
+    }
+  }
+  
